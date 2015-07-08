@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graph id="read-gradient-writeimg">
+    <version>1.0</version>
+
+<!-- Read Input Product -->
+<node id="Read-node">
+    <operator>Read</operator>
+    <sources />
+    <parameters>
+        <file>../data/gradient1024x2048.nc</file>
+    </parameters>
+</node>
+
+    
+
+<!-- Process WriteRGB -->
+<node id="WriteRGBImage-g1">
+    <operator>WriteRGBImage</operator>
+    <sources>
+        <source>Read-node</source>
+    </sources>
+    <parameters>
+        <filePath>../target/gradient1024x2048-log.png</filePath>
+        <formatName>PNG</formatName>
+        <cpdFilePath>../palettes/oceancolors_standard.cpd</cpdFilePath>
+        <level>0</level>
+        <scaleType>log</scaleType>
+        <colourScaleMin>0.01</colourScaleMin>
+        <colourScaleMax>1050</colourScaleMax>
+    </parameters>
+</node>
+
+ 
+
+</graph>

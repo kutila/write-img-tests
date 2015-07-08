@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graph id="read-chlor-writeimg">
+    <version>1.0</version>
+
+<!-- Read Input Product -->
+<node id="Read-node">
+    <operator>Read</operator>
+    <sources />
+    <parameters>
+        <file>../data/sgbr-avg.nc</file>
+    </parameters>
+</node>
+
+    
+
+<!-- Process WriteRGB -->
+<node id="WriteRGBImage-g1">
+    <operator>WriteRGBImage</operator>
+    <sources>
+        <source>Read-node</source>
+    </sources>
+    <parameters>
+        <filePath>../target/sgbr-avg-lin.png</filePath>
+        <formatName>PNG</formatName>
+        <cpdFilePath>../palettes/oceancolor_standard.cpd</cpdFilePath>
+	<cpdAutoDistribute>false</cpdAutoDistribute>
+        <level>0</level>
+        <scaleType>linear</scaleType>
+        <colourScaleMin>0.01</colourScaleMin>
+        <colourScaleMax>20</colourScaleMax>
+    </parameters>
+</node>
+
+ 
+
+</graph>
