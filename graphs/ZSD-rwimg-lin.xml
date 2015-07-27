@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graph id="read-ZSD-writeimg">
+    <version>1.0</version>
+
+<!-- Read Input Product -->
+<node id="Read-node">
+    <operator>Read</operator>
+    <sources />
+    <parameters>
+        <file>../data/M-L3-GBR-5D-1D-ZSD-D-2014187-2014191.nc</file>
+    </parameters>
+</node>
+
+    
+
+<!-- Process WriteRGB -->
+<node id="WriteRGBImage-g1">
+    <operator>WriteImage</operator>
+    <sources>
+        <source>Read-node</source>
+    </sources>
+    <parameters>
+        <filePath>../target/M-L3-GBR-5D-1D-ZSD-D-2014187-2014191-lin.png</filePath>
+        <formatName>PNG</formatName>
+        <cpdFilePath>../palettes/gbr_zsd0.cpd</cpdFilePath>
+	<cpdAutoDistribute>false</cpdAutoDistribute>
+        <level>0</level>
+        <scaleType>linear</scaleType>
+        <colourScaleMin>0.01</colourScaleMin>
+        <colourScaleMax>55.66</colourScaleMax>
+    </parameters>
+</node>
+
+ 
+
+</graph>
