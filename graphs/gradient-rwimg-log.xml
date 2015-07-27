@@ -15,7 +15,7 @@
 
 <!-- Process WriteRGB -->
 <node id="WriteRGBImage-g1">
-    <operator>WriteRGBImage</operator>
+    <operator>WriteImage</operator>
     <sources>
         <source>Read-node</source>
     </sources>
