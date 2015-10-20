@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graph id="read-chlor-writeimg">
+    <version>1.0</version>
+
+<!-- Read Input Product -->
+<node id="Read-node">
+    <operator>Read</operator>
+    <sources />
+    <parameters>
+        <file>../data/os/L3-GBR-7D-CHLOR-D-SGBR-2015032-2015038.nc</file>
+    </parameters>
+</node>
+
+<!--
+  <node id="Scale">
+    <operator>BandMaths</operator>
+    <sources>
+        <sourceProducts>BandAverage-g1</sourceProducts>
+    </sources>
+    <parameters>
+        <targetBands>
+            <targetBand>
+                <name>scaled</name>
+                <expression>'chl' &gt; 1050 AND 'chl' &lt; -32767 ? 9.25 : 'chl'</expression>
+                <description>scale output</description>
+                <type>float32</type>
+                <noDataValue>-32767</noDataValue>
+            </targetBand>
+        </targetBands>
+    </parameters>
+  </node>    
+ -->
+    
+
+<!-- Process WriteRGB -->
+<!--
+<node id="WriteRGBImage-g1">
+    <operator>WriteImage</operator>
+    <sources>
+        <source>Read-node</source>
+    </sources>
+    <parameters>
+        <filePath>../target/L3-GBR-7D-CHLOR-2015032-2015038/oceancolor_standard_cpd-log.png</filePath>
+        <formatName>PNG</formatName>
+        <cpdFilePath>../palettes/oceancolor_standard.cpd</cpdFilePath>
+	<cpdAutoDistribute>false</cpdAutoDistribute>
+        <level>0</level>
+        <scaleType>log</scaleType>
+        <colourScaleMin>0.01</colourScaleMin>
+        <colourScaleMax>10</colourScaleMax>
+    </parameters>
+</node>
+
+<node id="WriteRGBImage-g2">
+    <operator>WriteImage</operator>
+    <sources>
+        <source>Read-node</source>
+    </sources>
+    <parameters>
+        <filePath>../target/L3-GBR-7D-CHLOR-2015032-2015038/oceancolor_standard_cpd-linear-auto.png</filePath>
+        <formatName>PNG</formatName>
+        <cpdFilePath>../palettes/oceancolor_standard.cpd</cpdFilePath>
+	<cpdAutoDistribute>true</cpdAutoDistribute>
+        <level>0</level>
+        <scaleType>linear</scaleType>
+        <colourScaleMin>0.01</colourScaleMin>
+        <colourScaleMax>10</colourScaleMax>
+    </parameters>
+</node>
+-->
+
+<!--
+<node id="WriteRGBImage-g4">
+    <operator>WriteImage</operator>
+    <sources>
+        <source>Read-node</source>
+    </sources>
+    <parameters>
+        <filePath>../target/L3-GBR-7D-CHLOR-2015032-2015038/gbr_chl0_log_cpd-linear.png</filePath>
+        <formatName>PNG</formatName>
+        <cpdFilePath>../palettes/gbr_chl0_log.cpd</cpdFilePath>
+	<cpdAutoDistribute>false</cpdAutoDistribute>
+        <level>0</level>
+        <scaleType>linear</scaleType>
+        <colourScaleMin>0.01</colourScaleMin>
+        <colourScaleMax>10</colourScaleMax>
+    </parameters>
+</node>
+
+
+
+<node id="WriteRGBImage-g3">
+    <operator>WriteImage</operator>
+    <sources>
+        <source>Read-node</source>
+    </sources>
+    <parameters>
+        <filePath>../target/L3-GBR-7D-CHLOR-2015032-2015038/gbr_chl0_log_cpd-log.png</filePath>
+        <formatName>PNG</formatName>
+        <cpdFilePath>../palettes/gbr_chl0_log.cpd</cpdFilePath>
+	<cpdAutoDistribute>false</cpdAutoDistribute>
+        <level>0</level>
+        <scaleType>log</scaleType>
+        <colourScaleMin>0.01</colourScaleMin>
+        <colourScaleMax>10</colourScaleMax>
+    </parameters>
+</node>
+
+
+<node id="WriteRGBImage-g4">
+    <operator>WriteImage</operator>
+    <sources>
+        <source>Read-node</source>
+    </sources>
+    <parameters>
+        <filePath>../target/L3-GBR-7D-CHLOR-2015032-2015038/gbr_chl0_cpd-linear.png</filePath>
+        <formatName>PNG</formatName>
+        <cpdFilePath>../palettes/gbr_chl0.cpd</cpdFilePath>
+	<cpdAutoDistribute>false</cpdAutoDistribute>
+        <level>0</level>
+        <scaleType>linear</scaleType>
+        <colourScaleMin>0.01</colourScaleMin>
+        <colourScaleMax>10</colourScaleMax>
+    </parameters>
+</node>
+
+
+<node id="WriteRGBImage-g4">
+    <operator>WriteImage</operator>
+    <sources>
+        <source>Read-node</source>
+    </sources>
+    <parameters>
+        <filePath>../target/L3-GBR-7D-CHLOR-2015032-2015038/gbr_chl0_cpd-log.png</filePath>
+        <formatName>PNG</formatName>
+        <cpdFilePath>../palettes/gbr_chl0.cpd</cpdFilePath>
+	<cpdAutoDistribute>false</cpdAutoDistribute>
+        <level>0</level>
+        <scaleType>log</scaleType>
+        <colourScaleMin>0.01</colourScaleMin>
+        <colourScaleMax>10</colourScaleMax>
+    </parameters>
+</node>
+
+
+
+<node id="WriteRGBImage-g4">
+    <operator>WriteImage</operator>
+    <sources>
+        <source>Read-node</source>
+    </sources>
+    <parameters>
+        <filePath>../target/L3-GBR-7D-CHLOR-2015032-2015038/gbr_chl0_autodist_cpd-log.png</filePath>
+        <formatName>PNG</formatName>
+        <cpdFilePath>../palettes/gbr_chl0_autodist.cpd</cpdFilePath>
+	<cpdAutoDistribute>false</cpdAutoDistribute>
+        <level>0</level>
+        <scaleType>log</scaleType>
+        <colourScaleMin>0.01</colourScaleMin>
+        <colourScaleMax>10</colourScaleMax>
+    </parameters>
+</node>
+
+
+<node id="WriteRGBImage-g4">
+    <operator>WriteImage</operator>
+    <sources>
+        <source>Read-node</source>
+    </sources>
+    <parameters>
+        <filePath>../target/L3-GBR-7D-CHLOR-2015032-2015038/gbr_chl0_autodist_cpd-linear.png</filePath>
+        <formatName>PNG</formatName>
+        <cpdFilePath>../palettes/gbr_chl0_autodist.cpd</cpdFilePath>
+	<cpdAutoDistribute>false</cpdAutoDistribute>
+        <level>0</level>
+        <scaleType>linear</scaleType>
+        <colourScaleMin>0.01</colourScaleMin>
+        <colourScaleMax>10</colourScaleMax>
+    </parameters>
+</node>
+
+
+
+
+<node id="WriteRGBImage-g4">
+    <operator>WriteImage</operator>
+    <sources>
+        <source>Read-node</source>
+    </sources>
+    <parameters>
+        <filePath>../target/L3-GBR-7D-CHLOR-2015032-2015038/gbr_chl0_logf_cpd-linear.png</filePath>
+        <formatName>PNG</formatName>
+        <cpdFilePath>../palettes/gbr_chl0_logf.cpd</cpdFilePath>
+	<cpdAutoDistribute>false</cpdAutoDistribute>
+        <level>0</level>
+        <scaleType>linear</scaleType>
+        <colourScaleMin>0.01</colourScaleMin>
+        <colourScaleMax>10</colourScaleMax>
+    </parameters>
+</node>
+
+<node id="WriteRGBImage-g3">
+    <operator>WriteImage</operator>
+    <sources>
+        <source>Read-node</source>
+    </sources>
+    <parameters>
+        <filePath>../target/L3-GBR-7D-CHLOR-2015032-2015038/gbr_chl0_logf_cpd-log.png</filePath>
+        <formatName>PNG</formatName>
+        <cpdFilePath>../palettes/gbr_chl0_logf.cpd</cpdFilePath>
+	<cpdAutoDistribute>false</cpdAutoDistribute>
+        <level>0</level>
+        <scaleType>log</scaleType>
+        <colourScaleMin>0.01</colourScaleMin>
+        <colourScaleMax>10</colourScaleMax>
+    </parameters>
+</node>
+
+
+<node id="WriteRGBImage-g3">
+    <operator>WriteImage</operator>
+    <sources>
+        <source>Read-node</source>
+    </sources>
+    <parameters>
+        <filePath>../target/L3-GBR-7D-CHLOR-2015032-2015038/gbr_chl0_logf_autodist_cpd-log.png</filePath>
+        <formatName>PNG</formatName>
+        <cpdFilePath>../palettes/gbr_chl0_logf_autodist.cpd</cpdFilePath>
+	<cpdAutoDistribute>false</cpdAutoDistribute>
+        <level>0</level>
+        <scaleType>log</scaleType>
+        <colourScaleMin>0.01</colourScaleMin>
+        <colourScaleMax>10</colourScaleMax>
+    </parameters>
+</node>
+
+
+
+<node id="WriteRGBImage-g3">
+    <operator>WriteImage</operator>
+    <sources>
+        <source>Read-node</source>
+    </sources>
+    <parameters>
+        <filePath>../target/L3-GBR-7D-CHLOR-2015032-2015038/gbr_chl0_logf_autodist_cpd-linear.png</filePath>
+        <formatName>PNG</formatName>
+        <cpdFilePath>../palettes/gbr_chl0_logf_autodist.cpd</cpdFilePath>
+	<cpdAutoDistribute>false</cpdAutoDistribute>
+        <level>0</level>
+        <scaleType>linear</scaleType>
+        <colourScaleMin>0.01</colourScaleMin>
+        <colourScaleMax>10</colourScaleMax>
+    </parameters>
+</node>
+
+-->
+
+<node id="WriteRGBImage-g3">
+    <operator>WriteImage</operator>
+    <sources>
+        <source>Read-node</source>
+    </sources>
+    <parameters>
+        <filePath>../target/L3-GBR-7D-CHLOR-2015032-2015038/gbr_chl0_logf_cpd-log.png</filePath>
+        <formatName>PNG</formatName>
+        <cpdFilePath>../palettes/gbr_chl0_logf.cpd</cpdFilePath>
+	<cpdAutoDistribute>false</cpdAutoDistribute>
+        <level>0</level>
+        <scaleType>log</scaleType>
+        <colourScaleMin>0.01</colourScaleMin>
+        <colourScaleMax>10</colourScaleMax>
+    </parameters>
+</node>
+
+
+</graph>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graph id="read-CHLOR-writeimg">
+    <version>1.0</version>
+
+<!-- Read Input Product -->
+<node id="Read-node1">
+    <operator>Read</operator>
+    <sources />
+    <parameters>
+        <file>../data/A2015001.L3m_DAY_CHL_chlor_a_4km.bz2</file>
+    </parameters>
+</node>
+<node id="Read-node2">
+    <operator>Read</operator>
+    <sources />
+    <parameters>
+        <file>../data/A2015002.L3m_DAY_CHL_chlor_a_4km</file>
+    </parameters>
+</node>
+
+<!-- Process Band Average -->
+<node id="BandAverage-node">
+  <operator>BandAverage</operator>
+  <sources>
+    <sourceProducts>Read-node1,Read-node2</sourceProducts>
+  </sources>
+  <parameters>
+    <targetBandName>chl</targetBandName>
+    <isGeo>true</isGeo>
+    <ignoreValues></ignoreValues>
+    <range>0.0</range>
+    <min>0.00</min>
+    <max>60.0</max>
+    <replace>999.9</replace>
+    <inclusive>false</inclusive>
+    <countValidPixels>false</countValidPixels>
+  </parameters>
+</node>    
+
+<!-- Process WriteRGB -->
+<node id="WriteRGBImage-g1">
+    <operator>WriteImage</operator>
+    <sources>
+        <source>BandAverage-node</source>
+    </sources>
+    <parameters>
+        <filePath>../target/A2015001-002.L3m_DAY_CHL_chlor_a_4km-log.png</filePath>
+        <formatName>PNG</formatName>
+        <cpdFilePath>../palettes/oceancolor_standard.cpd</cpdFilePath>
+	<cpdAutoDistribute>false</cpdAutoDistribute>
+        <level>0</level>
+        <scaleType>log</scaleType>
+        <colourScaleMin>0.01</colourScaleMin>
+        <colourScaleMax>20</colourScaleMax>
+    </parameters>
+</node>
+
+ 
+
+</graph>

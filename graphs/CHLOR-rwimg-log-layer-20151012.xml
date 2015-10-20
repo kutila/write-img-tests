@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graph id="read-CHLOR-writeimg">
+    <version>1.0</version>
+
+<!-- Read Input Product -->
+<node id="Read-node">
+    <operator>Read</operator>
+    <sources />
+    <parameters>
+        <file>../data/M-L3-GBR-5D-1D-CHLOR-D-2014187-2014191.nc</file>
+    </parameters>
+</node>
+
+    
+
+<!-- Process WriteRGB -->
+<node id="WriteRGBImage-g1">
+    <operator>WriteImage</operator>
+    <sources>
+        <source>Read-node</source>
+    </sources>
+    <parameters>
+        <filePath>../target/20151012-L3-GBR-5D-1D-CHLOR-D-2014187-2014191-log.png</filePath>
+        <filePath1>../target/20151012-L3-GBR-5D-1D-CHLOR-D-2014187-2014191-log-layer1.png</filePath1>
+        <filePath2>../target/20151012-L3-GBR-5D-1D-CHLOR-D-2014187-2014191-log-layer2.png</filePath2>
+        <filePath3>../target/20151012-L3-GBR-5D-1D-CHLOR-D-2014187-2014191-log-layer3.png</filePath3>
+        <filePath4>../target/20151012-L3-GBR-5D-1D-CHLOR-D-2014187-2014191-log-layer4.png</filePath4>
+        <formatName>PNG</formatName>
+        <cpdFilePath>../palettes/oceancolor_standard.cpd</cpdFilePath>
+	<cpdAutoDistribute>false</cpdAutoDistribute>
+        <level>0</level>
+        <scaleType>log</scaleType>
+        <colourScaleMin>0.01</colourScaleMin>
+        <colourScaleMax>20</colourScaleMax>
+    </parameters>
+</node>
+
+ 
+
+</graph>

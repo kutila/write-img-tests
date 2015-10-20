@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graph id="extract_mean-c502e5a3c3bb640cddb373fd943b3aac">
+    <version>1.0</version>
+
+<!-- Read Input Product -->
+<node id="ReadTarget-g1-n1">
+    <operator>Read</operator>
+    <sources />
+    <parameters>
+        <file>/data/nasa/oceans.gsfc.nasa.gov/MODISA/Regions/Great_Barrier_Reef/2015/A2015032.L3m_DAY_GBROC_chlor_a_GBR_1km</file>
+    </parameters>
+</node>
+
+<!-- Read Input Product -->
+<node id="ReadTarget-g1-n2">
+    <operator>Read</operator>
+    <sources />
+    <parameters>
+        <file>/data/nasa/oceans.gsfc.nasa.gov/MODISA/Regions/Great_Barrier_Reef/2015/A2015033.L3m_DAY_GBROC_chlor_a_GBR_1km</file>
+    </parameters>
+</node>
+
+<!-- Read Input Product -->
+<node id="ReadTarget-g1-n3">
+    <operator>Read</operator>
+    <sources />
+    <parameters>
+        <file>/data/nasa/oceans.gsfc.nasa.gov/MODISA/Regions/Great_Barrier_Reef/2015/A2015034.L3m_DAY_GBROC_chlor_a_GBR_1km</file>
+    </parameters>
+</node>
+
+<!-- Read Input Product -->
+<node id="ReadTarget-g1-n4">
+    <operator>Read</operator>
+    <sources />
+    <parameters>
+        <file>/data/nasa/oceans.gsfc.nasa.gov/MODISA/Regions/Great_Barrier_Reef/2015/A2015035.L3m_DAY_GBROC_chlor_a_GBR_1km</file>
+    </parameters>
+</node>
+
+<!-- Read Input Product -->
+<node id="ReadTarget-g1-n5">
+    <operator>Read</operator>
+    <sources />
+    <parameters>
+        <file>/data/nasa/oceans.gsfc.nasa.gov/MODISA/Regions/Great_Barrier_Reef/2015/A2015036.L3m_DAY_GBROC_chlor_a_GBR_1km</file>
+    </parameters>
+</node>
+
+<!-- Read Input Product -->
+<node id="ReadTarget-g1-n6">
+    <operator>Read</operator>
+    <sources />
+    <parameters>
+        <file>/data/nasa/oceans.gsfc.nasa.gov/MODISA/Regions/Great_Barrier_Reef/2015/A2015037.L3m_DAY_GBROC_chlor_a_GBR_1km</file>
+    </parameters>
+</node>
+
+<!-- Read Input Product -->
+<node id="ReadTarget-g1-n7">
+    <operator>Read</operator>
+    <sources />
+    <parameters>
+        <file>/data/nasa/oceans.gsfc.nasa.gov/MODISA/Regions/Great_Barrier_Reef/2015/A2015038.L3m_DAY_GBROC_chlor_a_GBR_1km</file>
+    </parameters>
+</node>
+
+ 
+  <!-- Process Subset -->
+  <node id="Subset_ReadTarget-g1-n1">
+    <operator>Subset</operator>
+    <sources>
+        <source>ReadTarget-g1-n1</source>
+    </sources>
+    <parameters>
+        <geoRegion>POLYGON((146 -26,  146 -18, 156 -18, 156 -26, 146 -26))</geoRegion>
+        <subSamplingX>1</subSamplingX>
+        <subSamplingY>1</subSamplingY>
+        <fullSwath>false</fullSwath>
+        <copyMetadata>true</copyMetadata>
+    </parameters>
+  </node>
+
+
+ 
+  <!-- Process Subset -->
+  <node id="Subset_ReadTarget-g1-n2">
+    <operator>Subset</operator>
+    <sources>
+        <source>ReadTarget-g1-n2</source>
+    </sources>
+    <parameters>
+        <geoRegion>POLYGON((146 -26,  146 -18, 156 -18, 156 -26, 146 -26))</geoRegion>
+        <subSamplingX>1</subSamplingX>
+        <subSamplingY>1</subSamplingY>
+        <fullSwath>false</fullSwath>
+        <copyMetadata>true</copyMetadata>
+    </parameters>
+  </node>
+
+
+ 
+  <!-- Process Subset -->
+  <node id="Subset_ReadTarget-g1-n3">
+    <operator>Subset</operator>
+    <sources>
+        <source>ReadTarget-g1-n3</source>
+    </sources>
+    <parameters>
+        <geoRegion>POLYGON((146 -26,  146 -18, 156 -18, 156 -26, 146 -26))</geoRegion>
+        <subSamplingX>1</subSamplingX>
+        <subSamplingY>1</subSamplingY>
+        <fullSwath>false</fullSwath>
+        <copyMetadata>true</copyMetadata>
+    </parameters>
+  </node>
+
+
+ 
+  <!-- Process Subset -->
+  <node id="Subset_ReadTarget-g1-n4">
+    <operator>Subset</operator>
+    <sources>
+        <source>ReadTarget-g1-n4</source>
+    </sources>
+    <parameters>
+        <geoRegion>POLYGON((146 -26,  146 -18, 156 -18, 156 -26, 146 -26))</geoRegion>
+        <subSamplingX>1</subSamplingX>
+        <subSamplingY>1</subSamplingY>
+        <fullSwath>false</fullSwath>
+        <copyMetadata>true</copyMetadata>
+    </parameters>
+  </node>
+
+
+ 
+  <!-- Process Subset -->
+  <node id="Subset_ReadTarget-g1-n5">
+    <operator>Subset</operator>
+    <sources>
+        <source>ReadTarget-g1-n5</source>
+    </sources>
+    <parameters>
+        <geoRegion>POLYGON((146 -26,  146 -18, 156 -18, 156 -26, 146 -26))</geoRegion>
+        <subSamplingX>1</subSamplingX>
+        <subSamplingY>1</subSamplingY>
+        <fullSwath>false</fullSwath>
+        <copyMetadata>true</copyMetadata>
+    </parameters>
+  </node>
+
+
+ 
+  <!-- Process Subset -->
+  <node id="Subset_ReadTarget-g1-n6">
+    <operator>Subset</operator>
+    <sources>
+        <source>ReadTarget-g1-n6</source>
+    </sources>
+    <parameters>
+        <geoRegion>POLYGON((146 -26,  146 -18, 156 -18, 156 -26, 146 -26))</geoRegion>
+        <subSamplingX>1</subSamplingX>
+        <subSamplingY>1</subSamplingY>
+        <fullSwath>false</fullSwath>
+        <copyMetadata>true</copyMetadata>
+    </parameters>
+  </node>
+
+
+ 
+  <!-- Process Subset -->
+  <node id="Subset_ReadTarget-g1-n7">
+    <operator>Subset</operator>
+    <sources>
+        <source>ReadTarget-g1-n7</source>
+    </sources>
+    <parameters>
+        <geoRegion>POLYGON((146 -26,  146 -18, 156 -18, 156 -26, 146 -26))</geoRegion>
+        <subSamplingX>1</subSamplingX>
+        <subSamplingY>1</subSamplingY>
+        <fullSwath>false</fullSwath>
+        <copyMetadata>true</copyMetadata>
+    </parameters>
+  </node>
+
+
+<!-- Process Band Average -->
+<node id="BandAverage-g1">
+  <operator>BandAverage</operator>
+  <sources>
+    <sourceProducts>Subset_ReadTarget-g1-n1,Subset_ReadTarget-g1-n2,Subset_ReadTarget-g1-n3,Subset_ReadTarget-g1-n4,Subset_ReadTarget-g1-n5,Subset_ReadTarget-g1-n6,Subset_ReadTarget-g1-n7</sourceProducts>
+  </sources>
+  <parameters>
+    <targetBandName>chl</targetBandName>
+    <isGeo>true</isGeo>
+    <ignoreValues></ignoreValues>
+    <range>0.0</range>
+    <min>0.00</min>
+    <max>60.0</max>
+    <replace>-32767.0</replace>
+    <inclusive>false</inclusive>
+    <countValidPixels>false</countValidPixels>
+  </parameters>
+</node>
+
+<!-- Write Product -->
+<node id="Write_BandAverage-g1">
+    <operator>Write</operator>
+    <sources>
+        <source>BandAverage-g1</source>
+    </sources>
+    <parameters>
+        <file>/data/ospace/extract_mean/L3-GBR-7D-CHLOR-D-SGBR-2015032-2015038.nc</file>
+        <formatName>NetCDF-CF</formatName>
+        <deleteOutputOnFailure>true</deleteOutputOnFailure>
+        <writeEntireTileRows>true</writeEntireTileRows>
+        <clearCacheAfterRowWrite>true</clearCacheAfterRowWrite>
+    </parameters>
+</node>
+
+  <node id="Scale-WriteRGBImage_BandAverage-g1">
+    <operator>BandMaths</operator>
+    <sources>
+        <sourceProducts>BandAverage-g1</sourceProducts>
+    </sources>
+    <parameters>
+        <targetBands>
+            <targetBand>
+                <name>scaled</name>
+                <expression>'chl' &gt; 1050 AND 'chl' &lt; -32767 ? 9.25 : 'chl'</expression>
+                <description>scale output</description>
+                <type>float32</type>
+                <noDataValue>-32767</noDataValue>
+            </targetBand>
+        </targetBands>
+    </parameters>
+  </node>    
+    
+
+<!-- Process WriteRGB -->
+<node id="WriteRGBImage_BandAverage-g1">
+    <operator>WriteImage</operator>
+    <sources>
+        <source>Scale-WriteRGBImage_BandAverage-g1</source>
+    </sources>
+    <parameters>
+        <filePath>/data/cache/c502e5a3c3bb640cddb373fd943b3aac-L3-GBR-7D-CHLOR-D-SGBR-2015032-2015038.png</filePath>
+        <formatName>PNG</formatName>
+        <cpdFilePath>/Users/uq_sweeks/os.home/resources/colourpalettes//gbr_chl0.cpd</cpdFilePath>
+        <level>0</level>
+        <scaleType>log</scaleType>
+        <colourScaleMin>0.01</colourScaleMin>
+        <colourScaleMax>1050</colourScaleMax>
+    </parameters>
+</node>
+
+
+</graph>
